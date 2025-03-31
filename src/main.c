@@ -29,7 +29,43 @@
 
 
 uint32_t counter;
+uint8_t us;
+uint32_t count, ms;
 
+
+void delay_us(uint32_t target)
+{
+    count = 0;
+    us = 0;
+    while (count < target)
+    {
+        us = us +1;
+
+        if (us > 10)
+        {
+            us = 0;
+            count++;
+        }
+    }
+
+}
+
+void delay_ms(uint32_t target)
+{
+    count = 0;
+    ms = 0;
+    while (count < target)
+    {
+        ms = ms +1;
+
+        if (ms > 17000)
+        {
+            ms = 0;
+            count++;
+        }
+    }
+
+}
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
@@ -48,13 +84,15 @@ int main ( void )
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
 
-        if (counter > 25000000)
+/*        if (counter > 100000)
         {
             counter = 0;
             BUSY_LED_Toggle();
         }
         
-        counter++;
+        counter++;*/
+        BUSY_LED_Toggle();
+        delay_ms(500);
     }
 
     /* Execution should not come here during normal operation */
