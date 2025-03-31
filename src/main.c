@@ -101,19 +101,25 @@ int main ( void )
         
         DIR_Set();
         BUSY_LED_Set();
-        while (i < 100)
+        
+        STP_Set();
+        delay_ms(10);
+        STP_Clear();
+        delay_ms(1000);
+        i++;
+        /*while (i < 100)
         {
             STP_Set();
             delay_ms(10);
             STP_Clear();
             delay_ms(10);
             i++;
-        }
+        }*/
         
         
         BUSY_LED_Clear();
         //delay_ms(1000);
-        DIR_Clear();
+       /* DIR_Clear();
         i=0;
         BUSY_LED_Set();
         while (i < 100)
@@ -126,7 +132,7 @@ int main ( void )
         }
         
         i=0;
-        BUSY_LED_Clear();
+        BUSY_LED_Clear();*/
 
     }
 

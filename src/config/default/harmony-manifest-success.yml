@@ -4,7 +4,7 @@
 
 
 project: 624-Function-Testing
-creation_date: 2025-03-31T11:57:22.883+01:00[Europe/London]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-03-31T16:57:41.523+01:00[Europe/London]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.1
@@ -15,7 +15,9 @@ compiler: XC32 4.60
 
 modules:
     - {name: "csp", version: "v3.22.2"}
+    - {name: "core", version: "v3.13.1"}
     - {name: "CMSIS_5", version: "5.9.0"}
+    - {name: "CMSIS-FreeRTOS", version: "v11.1.0"}
 
 packs:
     - {name: "PIC32CK-GC_DFP", version: "1.0.131"}
