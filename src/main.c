@@ -74,6 +74,7 @@ void delay_ms(uint32_t target)
 
 int main ( void )
 {
+    uint16_t i = 0;
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     
@@ -99,16 +100,34 @@ int main ( void )
         counter++;*/
         
         DIR_Set();
-        STP_Set();
         BUSY_LED_Set();
-        delay_ms(1000);
-        STP_Clear();
+        while (i < 100)
+        {
+            STP_Set();
+            delay_ms(10);
+            STP_Clear();
+            delay_ms(10);
+            i++;
+        }
+        
+        
         BUSY_LED_Clear();
-        delay_ms(1000);
+        //delay_ms(1000);
         DIR_Clear();
-        STP_Set();
-        delay_ms(1000);
-        STP_Clear();
+        i=0;
+        BUSY_LED_Set();
+        while (i < 100)
+        {
+            STP_Set();
+            delay_ms(10);
+            STP_Clear();
+            delay_ms(10);
+            i++;
+        }
+        
+        i=0;
+        BUSY_LED_Clear();
+
     }
 
     /* Execution should not come here during normal operation */
