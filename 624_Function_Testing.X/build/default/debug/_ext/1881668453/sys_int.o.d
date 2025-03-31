@@ -1,6 +1,6 @@
-build/default/debug/_ext/1360937237/main.o: ../src/main.c \
- ../src/config/default/definitions.h \
- ../src/config/default/peripheral/evsys/plib_evsys.h \
+build/default/debug/_ext/1881668453/sys_int.o: \
+ ../src/config/default/system/int/src/sys_int.c \
+ ../src/config/default/system/int/sys_int.h \
  ../src/config/default/device.h \
  ../src/packs/PIC32CK1025GC01064_DFP/pic32ck1025gc01064.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/core_cm33.h \
@@ -111,26 +111,10 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/default/device_cache.h ../src/config/default/device.h \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/config/default/peripheral/port/plib_port.h \
- ../src/config/default/peripheral/clock/plib_clock.h \
- ../src/config/default/peripheral/nvic/plib_nvic.h \
- ../src/config/default/peripheral/cmcc/plib_cmcc.h \
- ../src/config/default/peripheral/pm/plib_pm.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
- ../src/config/default/FreeRTOSConfig.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/portable.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h \
- ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
- ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
- ../src/config/default/system/cache/sys_cache.h
+ ../src/config/default/system/int/sys_int_mapping.h \
+ ../src/config/default/peripheral/nvic/plib_nvic.h
 
-../src/config/default/definitions.h:
-
-../src/config/default/peripheral/evsys/plib_evsys.h:
+../src/config/default/system/int/sys_int.h:
 
 ../src/config/default/device.h:
 
@@ -354,34 +338,6 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
-../src/config/default/peripheral/port/plib_port.h:
-
-../src/config/default/peripheral/clock/plib_clock.h:
+../src/config/default/system/int/sys_int_mapping.h:
 
 ../src/config/default/peripheral/nvic/plib_nvic.h:
-
-../src/config/default/peripheral/cmcc/plib_cmcc.h:
-
-../src/config/default/peripheral/pm/plib_pm.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
-
-../src/config/default/FreeRTOSConfig.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/portable.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h:
-
-../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h:
-
-../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/task.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/list.h:
-
-../src/config/default/system/cache/sys_cache.h:

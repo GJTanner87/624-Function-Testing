@@ -1,7 +1,12 @@
-build/default/debug/_ext/1360937237/main.o: ../src/main.c \
- ../src/config/default/definitions.h \
- ../src/config/default/peripheral/evsys/plib_evsys.h \
- ../src/config/default/device.h \
+build/default/debug/_ext/101884895/sys_time.o: \
+ ../src/config/default/system/time/src/sys_time.c \
+ ../src/config/default/system/time/sys_time.h \
+ ../src/config/default/system/system.h \
+ ../src/config/default/system/system_common.h \
+ ../src/config/default/system/system_module.h \
+ ../src/config/default/system/system_common.h \
+ ../src/config/default/system/time/src/sys_time_local.h \
+ ../src/config/default/osal/osal.h ../src/config/default/device.h \
  ../src/packs/PIC32CK1025GC01064_DFP/pic32ck1025gc01064.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/core_cm33.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h \
@@ -111,11 +116,8 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/default/device_cache.h ../src/config/default/device.h \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
- ../src/config/default/peripheral/port/plib_port.h \
- ../src/config/default/peripheral/clock/plib_clock.h \
- ../src/config/default/peripheral/nvic/plib_nvic.h \
- ../src/config/default/peripheral/cmcc/plib_cmcc.h \
- ../src/config/default/peripheral/pm/plib_pm.h \
+ ../src/config/default/osal/osal_definitions.h \
+ ../src/config/default/osal/osal_freertos.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../src/config/default/FreeRTOSConfig.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
@@ -124,13 +126,26 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
- ../src/config/default/system/cache/sys_cache.h
+ ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h
 
-../src/config/default/definitions.h:
+../src/config/default/system/time/sys_time.h:
 
-../src/config/default/peripheral/evsys/plib_evsys.h:
+../src/config/default/system/system.h:
+
+../src/config/default/system/system_common.h:
+
+../src/config/default/system/system_module.h:
+
+../src/config/default/system/system_common.h:
+
+../src/config/default/system/time/src/sys_time_local.h:
+
+../src/config/default/osal/osal.h:
 
 ../src/config/default/device.h:
 
@@ -354,15 +369,9 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
 
-../src/config/default/peripheral/port/plib_port.h:
+../src/config/default/osal/osal_definitions.h:
 
-../src/config/default/peripheral/clock/plib_clock.h:
-
-../src/config/default/peripheral/nvic/plib_nvic.h:
-
-../src/config/default/peripheral/cmcc/plib_cmcc.h:
-
-../src/config/default/peripheral/pm/plib_pm.h:
+../src/config/default/osal/osal_freertos.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
 
@@ -380,8 +389,14 @@ build/default/debug/_ext/1360937237/main.o: ../src/main.c \
 
 ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
 
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
+
 ../src/third_party/rtos/FreeRTOS/Source/include/task.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/include/list.h:
 
-../src/config/default/system/cache/sys_cache.h:
+../src/third_party/rtos/FreeRTOS/Source/include/semphr.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:

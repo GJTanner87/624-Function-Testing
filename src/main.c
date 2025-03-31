@@ -27,6 +27,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
+char test[10] = "Testing";
 
 uint32_t counter;
 uint8_t us;
@@ -77,6 +78,8 @@ int main ( void )
     uint16_t i = 0;
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    
+    //RAM_Write(*test, 10, 0);
     
     RST_Set();
     DIR_Clear();
