@@ -76,6 +76,12 @@ int main ( void )
 {
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+    
+    RST_Set();
+    DIR_Clear();
+    STP_Clear();
+    MODE_Clear();
+    
 
     BUSY_LED_Set();
     
@@ -91,8 +97,18 @@ int main ( void )
         }
         
         counter++;*/
-        BUSY_LED_Toggle();
-        delay_ms(500);
+        
+        DIR_Set();
+        STP_Set();
+        BUSY_LED_Set();
+        delay_ms(1000);
+        STP_Clear();
+        BUSY_LED_Clear();
+        delay_ms(1000);
+        DIR_Clear();
+        STP_Set();
+        delay_ms(1000);
+        STP_Clear();
     }
 
     /* Execution should not come here during normal operation */

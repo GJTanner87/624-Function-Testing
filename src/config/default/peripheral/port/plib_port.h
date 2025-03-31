@@ -74,6 +74,42 @@
 #define BUSY_LED_Get()               (((PORT_REGS->GROUP[1].PORT_IN >> 0U)) & 0x01U)
 #define BUSY_LED_PIN                  PORT_PIN_PB00
 
+/*** Macros for DIR pin ***/
+#define DIR_Set()               (PORT_REGS->GROUP[3].PORT_OUTSET = ((uint32_t)1U << 8U))
+#define DIR_Clear()             (PORT_REGS->GROUP[3].PORT_OUTCLR = ((uint32_t)1U << 8U))
+#define DIR_Toggle()            (PORT_REGS->GROUP[3].PORT_OUTTGL = ((uint32_t)1U << 8U))
+#define DIR_OutputEnable()      (PORT_REGS->GROUP[3].PORT_DIRSET = ((uint32_t)1U << 8U))
+#define DIR_InputEnable()       (PORT_REGS->GROUP[3].PORT_DIRCLR = ((uint32_t)1U << 8U))
+#define DIR_Get()               (((PORT_REGS->GROUP[3].PORT_IN >> 8U)) & 0x01U)
+#define DIR_PIN                  PORT_PIN_PD08
+
+/*** Macros for MODE pin ***/
+#define MODE_Set()               (PORT_REGS->GROUP[3].PORT_OUTSET = ((uint32_t)1U << 9U))
+#define MODE_Clear()             (PORT_REGS->GROUP[3].PORT_OUTCLR = ((uint32_t)1U << 9U))
+#define MODE_Toggle()            (PORT_REGS->GROUP[3].PORT_OUTTGL = ((uint32_t)1U << 9U))
+#define MODE_OutputEnable()      (PORT_REGS->GROUP[3].PORT_DIRSET = ((uint32_t)1U << 9U))
+#define MODE_InputEnable()       (PORT_REGS->GROUP[3].PORT_DIRCLR = ((uint32_t)1U << 9U))
+#define MODE_Get()               (((PORT_REGS->GROUP[3].PORT_IN >> 9U)) & 0x01U)
+#define MODE_PIN                  PORT_PIN_PD09
+
+/*** Macros for RST pin ***/
+#define RST_Set()               (PORT_REGS->GROUP[3].PORT_OUTSET = ((uint32_t)1U << 10U))
+#define RST_Clear()             (PORT_REGS->GROUP[3].PORT_OUTCLR = ((uint32_t)1U << 10U))
+#define RST_Toggle()            (PORT_REGS->GROUP[3].PORT_OUTTGL = ((uint32_t)1U << 10U))
+#define RST_OutputEnable()      (PORT_REGS->GROUP[3].PORT_DIRSET = ((uint32_t)1U << 10U))
+#define RST_InputEnable()       (PORT_REGS->GROUP[3].PORT_DIRCLR = ((uint32_t)1U << 10U))
+#define RST_Get()               (((PORT_REGS->GROUP[3].PORT_IN >> 10U)) & 0x01U)
+#define RST_PIN                  PORT_PIN_PD10
+
+/*** Macros for STP pin ***/
+#define STP_Set()               (PORT_REGS->GROUP[3].PORT_OUTSET = ((uint32_t)1U << 11U))
+#define STP_Clear()             (PORT_REGS->GROUP[3].PORT_OUTCLR = ((uint32_t)1U << 11U))
+#define STP_Toggle()            (PORT_REGS->GROUP[3].PORT_OUTTGL = ((uint32_t)1U << 11U))
+#define STP_OutputEnable()      (PORT_REGS->GROUP[3].PORT_DIRSET = ((uint32_t)1U << 11U))
+#define STP_InputEnable()       (PORT_REGS->GROUP[3].PORT_DIRCLR = ((uint32_t)1U << 11U))
+#define STP_Get()               (((PORT_REGS->GROUP[3].PORT_IN >> 11U)) & 0x01U)
+#define STP_PIN                  PORT_PIN_PD11
+
 // *****************************************************************************
 /* PORT Group
 

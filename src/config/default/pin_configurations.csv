@@ -42,7 +42,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,O
 56,PD05,,Available,,,,,,No,FAST
 57,PD06,,Available,,,,,,No,FAST
 58,PD07,,Available,,,,,,No,FAST
-61,PD08,,Available,,,,,,No,FAST
-62,PD09,,Available,,,,,,No,FAST
-63,PD10,,Available,,,,,,No,FAST
-64,PD11,,Available,,,,,,No,FAST
+61,PD08,DIR,GPIO,Digital,Out,Low,,,No,FAST
+62,PD09,MODE,GPIO,Digital,Out,Low,,,No,FAST
+63,PD10,RST,GPIO,Digital,Out,Low,,,No,FAST
+64,PD11,STP,GPIO,Digital,Out,Low,,,No,FAST
