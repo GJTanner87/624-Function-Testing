@@ -28,6 +28,8 @@
 #include "definitions.h"                // SYS function prototypes
 
 
+uint32_t counter;
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Main Entry Point
@@ -39,10 +41,20 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
+    BUSY_LED_Set();
+    
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
+
+        if (counter > 25000000)
+        {
+            counter = 0;
+            BUSY_LED_Toggle();
+        }
+        
+        counter++;
     }
 
     /* Execution should not come here during normal operation */

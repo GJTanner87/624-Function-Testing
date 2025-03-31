@@ -11,7 +11,7 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,O
 13,PA09,,Available,,,,,,No,FAST
 15,PA11,,Available,,,,,,No,FAST
 16,PA12,,Available,,,,,,No,FAST
-17,PB00,,Available,,,,,,No,FAST
+17,PB00,BUSY_LED,GPIO,Digital,Out,Low,,,No,FAST
 20,PB02,,Available,,,,,,No,FAST
 21,PB03,,Available,,,,,,No,FAST
 23,PB04,,Available,,,,,,No,FAST

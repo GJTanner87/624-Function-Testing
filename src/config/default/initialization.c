@@ -376,6 +376,7 @@ void SYS_Initialize ( void* data )
     /* MISRA C-2012 Rule 2.2 deviated in this file.  Deviation record ID -  H3_MISRAC_2012_R_2_2_DR_1 */
 
   
+    PORT_Initialize();
 
     CLOCK_Initialize();
 
