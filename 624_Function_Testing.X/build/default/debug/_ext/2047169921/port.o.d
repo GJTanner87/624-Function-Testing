@@ -11,6 +11,7 @@ build/default/debug/_ext/2047169921/port.o: \
  ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h
 
 ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
@@ -34,5 +35,7 @@ build/default/debug/_ext/2047169921/port.o: \
 ../src/third_party/rtos/FreeRTOS/Source/include/list.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h:

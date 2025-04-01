@@ -6,6 +6,15 @@
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
+          <logicalFolder name="driver" displayName="driver" projectFiles="true">
+            <itemPath>../src/config/default/driver/driver.h</itemPath>
+            <itemPath>../src/config/default/driver/driver_common.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="osal" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/default/osal/osal_freertos.h</itemPath>
+            <itemPath>../src/config/default/osal/osal_definitions.h</itemPath>
+            <itemPath>../src/config/default/osal/osal.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.h</itemPath>
@@ -25,11 +34,40 @@
             <logicalFolder name="port" displayName="port" projectFiles="true">
               <itemPath>../src/config/default/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/rtc/plib_rtc.h</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="system" displayName="system" projectFiles="true">
             <logicalFolder name="cache" displayName="cache" projectFiles="true">
               <itemPath>../src/config/default/system/cache/sys_cache.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="command" displayName="command" projectFiles="true">
+              <itemPath>../src/config/default/system/command/sys_command.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="console" displayName="console" projectFiles="true">
+              <itemPath>../src/config/default/system/console/sys_console.h</itemPath>
+              <itemPath>../src/config/default/system/console/src/sys_console_local.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="debug" displayName="debug" projectFiles="true">
+              <itemPath>../src/config/default/system/debug/sys_debug.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="int" displayName="int" projectFiles="true">
+              <itemPath>../src/config/default/system/int/sys_int.h</itemPath>
+              <itemPath>../src/config/default/system/int/sys_int_mapping.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="reset" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/default/system/reset/sys_reset.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/default/system/time/src/sys_time_local.h</itemPath>
+              <itemPath>../src/config/default/system/time/sys_time.h</itemPath>
+              <itemPath>../src/config/default/system/time/sys_time_definitions.h</itemPath>
+            </logicalFolder>
+            <itemPath>../src/config/default/system/system_media.h</itemPath>
+            <itemPath>../src/config/default/system/system_common.h</itemPath>
+            <itemPath>../src/config/default/system/system_module.h</itemPath>
+            <itemPath>../src/config/default/system/system.h</itemPath>
           </logicalFolder>
           <itemPath>../src/config/default/interrupts.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
@@ -38,6 +76,9 @@
           <itemPath>../src/config/default/toolchain_specifics.h</itemPath>
           <itemPath>../src/config/default/device.h</itemPath>
           <itemPath>../src/config/default/FreeRTOSConfig.h</itemPath>
+          <itemPath>../src/config/default/user.h</itemPath>
+          <itemPath>../src/config/default/sys_tasks.h</itemPath>
+          <itemPath>../src/config/default/configuration.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
@@ -59,6 +100,7 @@
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h</itemPath>
             <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/task.h</itemPath>
+            <itemPath>../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h</itemPath>
           </logicalFolder>
           <logicalFolder name="portable" displayName="portable" projectFiles="true">
             <logicalFolder name="GCC" displayName="GCC" projectFiles="true">
@@ -209,6 +251,7 @@
           <itemPath>../src/packs/PIC32CK1025GC01064_DFP/pic32ck1025gc01064.h</itemPath>
         </logicalFolder>
       </logicalFolder>
+      <itemPath>../src/app.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -230,6 +273,9 @@
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
+          <logicalFolder name="osal" displayName="osal" projectFiles="true">
+            <itemPath>../src/config/default/osal/osal_freertos.c</itemPath>
+          </logicalFolder>
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.c</itemPath>
@@ -249,6 +295,9 @@
             <logicalFolder name="port" displayName="port" projectFiles="true">
               <itemPath>../src/config/default/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/rtc/plib_rtc_timer.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/default/stdio/xc32_monitor.c</itemPath>
@@ -257,6 +306,21 @@
             <logicalFolder name="cache" displayName="cache" projectFiles="true">
               <itemPath>../src/config/default/system/cache/sys_cache.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="command" displayName="command" projectFiles="true">
+              <itemPath>../src/config/default/system/command/src/sys_command.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="console" displayName="console" projectFiles="true">
+              <itemPath>../src/config/default/system/console/src/sys_console.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="int" displayName="int" projectFiles="true">
+              <itemPath>../src/config/default/system/int/src/sys_int.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="reset" displayName="reset" projectFiles="true">
+              <itemPath>../src/config/default/system/reset/sys_reset.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/default/system/time/src/sys_time.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <itemPath>../src/config/default/initialization.c</itemPath>
           <itemPath>../src/config/default/libc_syscalls.c</itemPath>
@@ -264,6 +328,7 @@
           <itemPath>../src/config/default/exceptions.c</itemPath>
           <itemPath>../src/config/default/startup_xc32.c</itemPath>
           <itemPath>../src/config/default/freertos_hooks.c</itemPath>
+          <itemPath>../src/config/default/tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
@@ -294,6 +359,7 @@
       </logicalFolder>
       <itemPath>../src/config/default/pin_configurations.csv</itemPath>
       <itemPath>../src/main.c</itemPath>
+      <itemPath>../src/app.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
@@ -417,7 +483,7 @@
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-cross-reference-file" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
-        <property key="heap-size" value="512"/>
+        <property key="heap-size" value="1024"/>
         <property key="input-libraries" value=""/>
         <property key="kseg-length" value=""/>
         <property key="kseg-origin" value=""/>

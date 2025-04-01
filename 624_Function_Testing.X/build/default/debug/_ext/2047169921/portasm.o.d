@@ -9,7 +9,8 @@ build/default/debug/_ext/2047169921/portasm.o: \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h
+ ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h
 
 ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.h:
 
@@ -30,3 +31,5 @@ build/default/debug/_ext/2047169921/portasm.o: \
 ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/mpu_syscall_numbers.h:

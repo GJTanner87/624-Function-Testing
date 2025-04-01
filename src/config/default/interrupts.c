@@ -48,6 +48,7 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
+#include "configuration.h"
 #include "device_vectors.h"
 #include "interrupts.h"
 #include "definitions.h"
@@ -80,7 +81,7 @@ void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(vo
 }
 
 /* MISRAC 2012 deviation block start */
-/* MISRA C-2012 Rule 8.6 deviated 163 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
+/* MISRA C-2012 Rule 8.6 deviated 162 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
 extern void MemoryManagement_Handler   ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void BusFault_Handler           ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -99,7 +100,6 @@ extern void OSC32KCTRL_Handler         ( void ) __attribute__((weak, alias("Dumm
 extern void MCLK_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void FREQM_Handler              ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void WDT_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void RTC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_EXTINT_0_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_EXTINT_1_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void EIC_EXTINT_2_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -282,7 +282,7 @@ const H3DeviceVectors exception_table=
     .pfnMCLK_Handler               = MCLK_Handler,
     .pfnFREQM_Handler              = FREQM_Handler,
     .pfnWDT_Handler                = WDT_Handler,
-    .pfnRTC_Handler                = RTC_Handler,
+    .pfnRTC_Handler                = RTC_InterruptHandler,
     .pfnEIC_EXTINT_0_Handler       = EIC_EXTINT_0_Handler,
     .pfnEIC_EXTINT_1_Handler       = EIC_EXTINT_1_Handler,
     .pfnEIC_EXTINT_2_Handler       = EIC_EXTINT_2_Handler,
