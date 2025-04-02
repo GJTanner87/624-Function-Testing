@@ -31,8 +31,15 @@ uint32_t i;
 uint32_t counter;
 uint8_t us;
 uint32_t count, ms;
+bool forward;
 
-static void EIC_User_Handler(uintptr_t context)
+static void EIC_Pin8_Handler(uintptr_t context)
+{
+    //BUSY_LED_Toggle();
+    i++;
+}
+
+static void EIC_Pin9_Handler(uintptr_t context)
 {
     BUSY_LED_Toggle();
     i++;
@@ -82,12 +89,14 @@ int main ( void )
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
-    EIC_CallbackRegister(EIC_PIN_9, EIC_User_Handler, 0);
-    EIC_CallbackRegister(EIC_PIN_8, EIC_User_Handler, 0);
+    EIC_CallbackRegister(EIC_PIN_9, EIC_Pin9_Handler, 0);
+    EIC_CallbackRegister(EIC_PIN_8, EIC_Pin8_Handler, 0);
+    
+    forward = true;
     
     BUSY_LED_Set();
     RST_Set();
-    DIR_Clear();
+    DIR_Set();
     STP_Clear();
     MODE_Clear();
     
@@ -96,17 +105,35 @@ int main ( void )
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
         
-        while(i>0)
+        /*while(i>0)
         {
             i=i-1;
+        }*/
+        if (forward == true)
+        {
+            STP_Set();        
+            delay_ms(20);
+            STP_Clear();
+            delay_ms(20);
+            //if (i > 0x300)
+            //{
+                //forward = false;
+                //DIR_Clear();
+            //}
         }
-        
-        STP_Set();        
-        delay_ms(10);
-      
-        STP_Clear();
-        
-        delay_ms(10);
+        else
+        {
+            STP_Set();        
+            delay_ms(20);
+            STP_Clear();
+            delay_ms(20);
+            if (i< 0x10)
+            {
+                forward = true;
+                DIR_Set();
+            }
+        }
+        delay_ms(100);
 
     }
 
