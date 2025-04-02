@@ -27,22 +27,39 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
+/* Max Encoder position 9C40 */
+uint32_t pos_list[4] = {0x100, 0x1020, 0x200, 0x400};
+
 uint32_t i;
+uint32_t pos_target;
 uint32_t counter;
 uint8_t us;
-uint32_t count, ms;
-bool forward;
+uint32_t count, ms, position;
+bool forward, direction, zero_point;
 
 static void EIC_Pin8_Handler(uintptr_t context)
 {
+    if (i == 0)
+    {
+        direction = true;
+    }
     //BUSY_LED_Toggle();
     i++;
 }
 
 static void EIC_Pin9_Handler(uintptr_t context)
 {
-    BUSY_LED_Toggle();
+    if (i == 0)
+    {
+        direction = false;
+    }
     i++;
+}
+
+static void EIC_Index_Handler(uintptr_t context)
+{
+    zero_point = true;
+    BUSY_LED_Toggle();
 }
 
 // *****************************************************************************
@@ -91,35 +108,69 @@ int main ( void )
 
     EIC_CallbackRegister(EIC_PIN_9, EIC_Pin9_Handler, 0);
     EIC_CallbackRegister(EIC_PIN_8, EIC_Pin8_Handler, 0);
+    EIC_CallbackRegister(EIC_PIN_7, EIC_Index_Handler, 0);
     
+    position = 0;
     forward = true;
+    zero_point = false;
+    counter = 0;
+    pos_target = pos_list[0];
     
     BUSY_LED_Set();
     RST_Set();
-    DIR_Set();
+    DIR_Clear();
     STP_Clear();
     MODE_Clear();
     
+    while (zero_point == false)
+    {
+        STP_Set();        
+        delay_ms(20);
+        STP_Clear();
+        delay_ms(20);
+    }
+    
+    DIR_Set();
+    i = 0;
+    position = 0;
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
         
-        /*while(i>0)
+        if (position > pos_target)
         {
-            i=i-1;
-        }*/
+            forward = false;
+            DIR_Clear();
+            if ((position - pos_target) < 20)
+            {
+                MODE_Set();
+            }
+            else
+            {
+                MODE_Clear();
+            }
+        }
+        else
+        {
+            forward = true;
+            DIR_Set();
+            if ((pos_target - position) < 20)
+            {
+                MODE_Set();
+            }
+            else
+            {
+                MODE_Clear();
+            }
+        }
+        
         if (forward == true)
         {
             STP_Set();        
             delay_ms(20);
             STP_Clear();
             delay_ms(20);
-            //if (i > 0x300)
-            //{
-                //forward = false;
-                //DIR_Clear();
-            //}
         }
         else
         {
@@ -127,11 +178,36 @@ int main ( void )
             delay_ms(20);
             STP_Clear();
             delay_ms(20);
-            if (i< 0x10)
+        }
+        
+        if (position == pos_target)
+        {
+            counter++;
+            if (counter > 3)
             {
-                forward = true;
-                DIR_Set();
+                counter = 0;
             }
+            pos_target = pos_list[counter];
+        }
+        
+        if (i != 0)
+        {
+            if (forward == true)
+            {
+                position = position + i;
+            }
+            else
+            {
+                if (i > position)
+                {
+                    position = 0;
+                }
+                else
+                {
+                    position = position - i;
+                }
+            }
+            i = 0;
         }
         delay_ms(100);
 
