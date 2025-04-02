@@ -1,8 +1,6 @@
 build/default/debug/_ext/1171490990/exceptions.o: \
- ../src/config/default/exceptions.c ../src/config/default/interrupts.h \
- ../src/config/default/definitions.h \
- ../src/config/default/peripheral/evsys/plib_evsys.h \
- ../src/config/default/device.h \
+ ../src/config/default/exceptions.c ../src/config/default/configuration.h \
+ ../src/config/default/user.h ../src/config/default/device.h \
  ../src/packs/PIC32CK1025GC01064_DFP/pic32ck1025gc01064.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/core_cm33.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h \
@@ -109,21 +107,45 @@ build/default/debug/_ext/1171490990/exceptions.o: \
  ../src/packs/PIC32CK1025GC01064_DFP/instance/usbhs.h \
  ../src/packs/PIC32CK1025GC01064_DFP/instance/wdt.h \
  ../src/packs/PIC32CK1025GC01064_DFP/pio/pic32ck1025gc01064.h \
- ../src/config/default/device_cache.h ../src/config/default/device.h \
+ ../src/config/default/device_cache.h \
  ../src/config/default/toolchain_specifics.h \
  ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h \
+ ../src/config/default/interrupts.h ../src/config/default/definitions.h \
+ ../src/config/default/peripheral/evsys/plib_evsys.h \
+ ../src/config/default/device.h \
+ ../src/config/default/system/command/sys_command.h \
+ ../src/config/default/configuration.h \
+ ../src/config/default/system/system.h \
+ ../src/config/default/system/system_common.h \
+ ../src/config/default/system/system_module.h \
+ ../src/config/default/system/system_common.h \
  ../src/config/default/peripheral/port/plib_port.h \
  ../src/config/default/peripheral/clock/plib_clock.h \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/cmcc/plib_cmcc.h \
  ../src/config/default/peripheral/pm/plib_pm.h \
- ../src/config/default/peripheral/eic/plib_eic.h
+ ../src/config/default/peripheral/eic/plib_eic.h \
+ ../src/config/default/system/console/sys_console.h \
+ ../src/config/default/driver/driver.h \
+ ../src/config/default/driver/driver_common.h \
+ ../src/config/default/system/console/src/sys_console_local.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
+ ../src/config/default/FreeRTOSConfig.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/portable.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
+ ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
+ ../src/config/default/system/cache/sys_cache.h \
+ ../src/config/default/system/reset/sys_reset.h \
+ ../src/config/default/system/debug/sys_debug.h ../src/app.h
 
-../src/config/default/interrupts.h:
+../src/config/default/configuration.h:
 
-../src/config/default/definitions.h:
-
-../src/config/default/peripheral/evsys/plib_evsys.h:
+../src/config/default/user.h:
 
 ../src/config/default/device.h:
 
@@ -341,11 +363,29 @@ build/default/debug/_ext/1171490990/exceptions.o: \
 
 ../src/config/default/device_cache.h:
 
-../src/config/default/device.h:
-
 ../src/config/default/toolchain_specifics.h:
 
 ../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h:
+
+../src/config/default/interrupts.h:
+
+../src/config/default/definitions.h:
+
+../src/config/default/peripheral/evsys/plib_evsys.h:
+
+../src/config/default/device.h:
+
+../src/config/default/system/command/sys_command.h:
+
+../src/config/default/configuration.h:
+
+../src/config/default/system/system.h:
+
+../src/config/default/system/system_common.h:
+
+../src/config/default/system/system_module.h:
+
+../src/config/default/system/system_common.h:
 
 ../src/config/default/peripheral/port/plib_port.h:
 
@@ -358,3 +398,39 @@ build/default/debug/_ext/1171490990/exceptions.o: \
 ../src/config/default/peripheral/pm/plib_pm.h:
 
 ../src/config/default/peripheral/eic/plib_eic.h:
+
+../src/config/default/system/console/sys_console.h:
+
+../src/config/default/driver/driver.h:
+
+../src/config/default/driver/driver_common.h:
+
+../src/config/default/system/console/src/sys_console_local.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
+
+../src/config/default/FreeRTOSConfig.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/portable.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/deprecated_definitions.h:
+
+../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h:
+
+../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/list.h:
+
+../src/config/default/system/cache/sys_cache.h:
+
+../src/config/default/system/reset/sys_reset.h:
+
+../src/config/default/system/debug/sys_debug.h:
+
+../src/app.h:

@@ -60,6 +60,7 @@
 void Reset_Handler (void);
 void NonMaskableInt_Handler (void);
 void HardFault_Handler (void);
+void xPortSysTickHandler (void);
 void EIC_EXTINT_7_InterruptHandler (void);
 void EIC_EXTINT_8_InterruptHandler (void);
 void EIC_EXTINT_9_InterruptHandler (void);
