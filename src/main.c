@@ -27,13 +27,22 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
-char test[10] = "Testing";
-
+uint32_t i;
 uint32_t counter;
 uint8_t us;
 uint32_t count, ms;
 
+static void EIC_User_Handler(uintptr_t context)
+{
+    BUSY_LED_Toggle();
+    i++;
+}
 
+// *****************************************************************************
+// *****************************************************************************
+// Section: Main Entry Point
+// *****************************************************************************
+// *****************************************************************************
 void delay_us(uint32_t target)
 {
     count = 0;
@@ -67,75 +76,37 @@ void delay_ms(uint32_t target)
     }
 
 }
-// *****************************************************************************
-// *****************************************************************************
-// Section: Main Entry Point
-// *****************************************************************************
-// *****************************************************************************
 
 int main ( void )
 {
-    uint16_t i = 0;
     /* Initialize all modules */
     SYS_Initialize ( NULL );
+
+    EIC_CallbackRegister(EIC_PIN_9, EIC_User_Handler, 0);
+    EIC_CallbackRegister(EIC_PIN_8, EIC_User_Handler, 0);
     
-    //RAM_Write(*test, 10, 0);
-    
+    BUSY_LED_Set();
     RST_Set();
     DIR_Clear();
     STP_Clear();
     MODE_Clear();
     
-
-    BUSY_LED_Set();
-    
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
-
-/*        if (counter > 100000)
+        
+        while(i>0)
         {
-            counter = 0;
-            BUSY_LED_Toggle();
+            i=i-1;
         }
         
-        counter++;*/
-        
-        DIR_Set();
-        BUSY_LED_Set();
-        
-        STP_Set();
+        STP_Set();        
         delay_ms(10);
+      
         STP_Clear();
-        delay_ms(1000);
-        i++;
-        /*while (i < 100)
-        {
-            STP_Set();
-            delay_ms(10);
-            STP_Clear();
-            delay_ms(10);
-            i++;
-        }*/
         
-        
-        BUSY_LED_Clear();
-        //delay_ms(1000);
-       /* DIR_Clear();
-        i=0;
-        BUSY_LED_Set();
-        while (i < 100)
-        {
-            STP_Set();
-            delay_ms(10);
-            STP_Clear();
-            delay_ms(10);
-            i++;
-        }
-        
-        i=0;
-        BUSY_LED_Clear();*/
+        delay_ms(10);
 
     }
 
