@@ -59,6 +59,7 @@
 #include "system/console/sys_console.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "system/int/sys_int.h"
 #include "system/cache/sys_cache.h"
 #include "system/reset/sys_reset.h"
 #include "osal/osal.h"

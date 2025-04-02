@@ -139,8 +139,17 @@ build/default/debug/_ext/1171490990/tasks.o: \
  ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
+ ../src/config/default/system/int/sys_int.h \
+ ../src/config/default/system/int/sys_int_mapping.h \
  ../src/config/default/system/cache/sys_cache.h \
  ../src/config/default/system/reset/sys_reset.h \
+ ../src/config/default/osal/osal.h \
+ ../src/config/default/osal/osal_definitions.h \
+ ../src/config/default/osal/osal_freertos.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
  ../src/config/default/system/debug/sys_debug.h ../src/app.h \
  ../src/config/default/sys_tasks.h
 
@@ -426,9 +435,27 @@ build/default/debug/_ext/1171490990/tasks.o: \
 
 ../src/third_party/rtos/FreeRTOS/Source/include/list.h:
 
+../src/config/default/system/int/sys_int.h:
+
+../src/config/default/system/int/sys_int_mapping.h:
+
 ../src/config/default/system/cache/sys_cache.h:
 
 ../src/config/default/system/reset/sys_reset.h:
+
+../src/config/default/osal/osal.h:
+
+../src/config/default/osal/osal_definitions.h:
+
+../src/config/default/osal/osal_freertos.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/semphr.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
 
 ../src/config/default/system/debug/sys_debug.h:
 
