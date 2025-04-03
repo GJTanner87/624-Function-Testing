@@ -29,6 +29,8 @@
 
 /* Max Encoder position 9C40 */
 uint32_t pos_list[4] = {0x100, 0x1020, 0x200, 0x400};
+uint8_t mem_write[10] = {1,2,3,4,5,6,7,8,9,10};
+uint8_t mem_read[10];
 
 uint32_t i;
 uint32_t pos_target;
@@ -122,6 +124,9 @@ int main ( void )
     STP_Clear();
     MODE_Clear();
     
+    RAM_Read((uint32_t*) mem_read, 10, RAM_ADDRESS_START);
+    RAM_Write((uint32_t*) mem_write, 15, RAM_ADDRESS_START);
+    RAM_Read((uint32_t*) mem_read, 15, RAM_ADDRESS_START);
     while (zero_point == false)
     {
         STP_Set();        
@@ -129,7 +134,7 @@ int main ( void )
         STP_Clear();
         delay_ms(20);
     }
-    
+
     DIR_Set();
     i = 0;
     position = 0;

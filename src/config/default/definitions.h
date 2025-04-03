@@ -55,7 +55,12 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/cmcc/plib_cmcc.h"
 #include "peripheral/pm/plib_pm.h"
+#include "peripheral/ram/plib_ram.h"
+#include "driver/memory/drv_memory.h"
 #include "peripheral/eic/plib_eic.h"
+#include "peripheral/rtc/plib_rtc.h"
+#include "system/time/sys_time.h"
+#include "driver/memory/drv_memory_ram.h"
 #include "system/console/sys_console.h"
 #include "FreeRTOS.h"
 #include "task.h"
@@ -84,6 +89,8 @@ extern "C" {
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 120000000
+    
+#define RAM_ADDRESS_START 0x20000010
 
 // *****************************************************************************
 // *****************************************************************************
@@ -197,6 +204,8 @@ typedef struct
 {
     SYS_MODULE_OBJ sysCommand;
 
+    SYS_MODULE_OBJ  sysTime;
+    SYS_MODULE_OBJ  drvMemory0;
     SYS_MODULE_OBJ  sysConsole0;
 
 

@@ -328,6 +328,36 @@
 /* MISRA C-2012 Rule 11.1 */
 /* MISRA C-2012 Rule 11.3 */
 /* MISRA C-2012 Rule 11.8 */
+// <editor-fold defaultstate="collapsed" desc="DRV_MEMORY Instance 0 Initialization Data">
+
+
+static DRV_MEMORY_CLIENT_OBJECT gDrvMemory0ClientObject[DRV_MEMORY_CLIENTS_NUMBER_IDX0];
+
+
+static const DRV_MEMORY_DEVICE_INTERFACE drvMemory0DeviceAPI = {
+    .Open               = DRV_RAM_Open,
+    .Close              = DRV_RAM_Close,
+    .Status             = DRV_RAM_Status,
+    .SectorErase        = NULL,
+    .Read               = DRV_RAM_Read,
+    .PageWrite          = DRV_RAM_PageWrite,
+    .EventHandlerSet    = NULL,
+    .GeometryGet        = (DRV_MEMORY_DEVICE_GEOMETRY_GET)DRV_RAM_GeometryGet,
+    .TransferStatusGet  = (DRV_MEMORY_DEVICE_TRANSFER_STATUS_GET)DRV_RAM_TransferStatusGet
+};
+static const DRV_MEMORY_INIT drvMemory0InitData =
+{
+    .memDevIndex                = 0,
+    .memoryDevice               = &drvMemory0DeviceAPI,
+    .isMemDevInterruptEnabled   = false,
+    .memDevStatusPollUs         = 500,
+    .isFsEnabled                = false,
+    .ewBuffer                   = NULL,
+    .clientObjPool              = (uintptr_t)&gDrvMemory0ClientObject[0],
+    .nClientsMax                = DRV_MEMORY_CLIENTS_NUMBER_IDX0
+};
+
+// </editor-fold>
 
 
 
@@ -359,6 +389,23 @@ static const SYS_CMD_INIT sysCmdInit =
 	.consoleIndex = 0,
 };
 
+// <editor-fold defaultstate="collapsed" desc="SYS_TIME Initialization Data">
+
+/*static const SYS_TIME_PLIB_INTERFACE sysTimePlibAPI = {
+//    .timerCallbackSet = (SYS_TIME_PLIB_CALLBACK_REGISTER)RTC_Timer32CallbackRegister,
+    .timerStart = (SYS_TIME_PLIB_START)RTC_Timer32Start,
+    .timerStop = (SYS_TIME_PLIB_STOP)RTC_Timer32Stop,
+    .timerFrequencyGet = (SYS_TIME_PLIB_FREQUENCY_GET)RTC_Timer32FrequencyGet,
+    .timerPeriodSet = (SYS_TIME_PLIB_PERIOD_SET)NULL,
+};
+
+static const SYS_TIME_INIT sysTimeInitData =      TODO
+{
+    .timePlib = &sysTimePlibAPI,
+    .hwTimerIntNum = RTC_IRQn,
+};*/
+
+// </editor-fold>
 // <editor-fold defaultstate="collapsed" desc="SYS_CONSOLE Instance 0 Initialization Data">
 
 
@@ -406,6 +453,8 @@ void SYS_Initialize ( void* data )
 
     EIC_Initialize();
 
+    RTC_Initialize();
+
 
 
     /* MISRAC 2012 deviation block start */
@@ -414,11 +463,20 @@ void SYS_Initialize ( void* data )
     /* MISRA C-2012 Rule 11.8 - Deviation record ID - H3_MISRAC_2012_R_11_8_DR_1 */
 
 
+    sysObj.drvMemory0 = DRV_MEMORY_Initialize((SYS_MODULE_INDEX)DRV_MEMORY_INDEX_0, (SYS_MODULE_INIT *)&drvMemory0InitData);
+
+
     sysObj.sysCommand = (uint32_t) SYS_CMD_Initialize((SYS_MODULE_INIT*)&sysCmdInit);
 
     /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
+    H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
+        
+    //sysObj.sysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
+    
+    /* MISRAC 2012 deviation block end */
+    /* MISRA C-2012 Rule 11.3, 11.8 deviated below. Deviation record ID -  
      H3_MISRAC_2012_R_11_3_DR_1 & H3_MISRAC_2012_R_11_8_DR_1*/
-        sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
+//        sysObj.sysConsole0 = SYS_CONSOLE_Initialize(SYS_CONSOLE_INDEX_0, (SYS_MODULE_INIT *)&sysConsole0Init);
    /* MISRAC 2012 deviation block end */
 
 

@@ -89,6 +89,12 @@ extern "C" {
 #define SYS_CMD_RTOS_STACK_SIZE                256
 #define SYS_CMD_RTOS_TASK_PRIORITY             1
 
+/* TIME System Service Configuration Options */
+#define SYS_TIME_INDEX_0                            (0)
+#define SYS_TIME_MAX_TIMERS                         (5)
+#define SYS_TIME_HW_COUNTER_WIDTH                   (32)
+#define SYS_TIME_TICK_FREQ_IN_HZ                    (512)
+
 #define SYS_CONSOLE_DEVICE_MAX_INSTANCES   			(1U)
 #define SYS_CONSOLE_UART_MAX_INSTANCES 	   			(0U)
 #define SYS_CONSOLE_USB_CDC_MAX_INSTANCES 	   		(0U)
@@ -106,6 +112,21 @@ extern "C" {
 // Section: Driver Configuration
 // *****************************************************************************
 // *****************************************************************************
+/* Memory Driver Global Configuration Options */
+#define DRV_MEMORY_INSTANCES_NUMBER          (1U)
+
+/* Memory Driver Instance 0 Configuration */
+#define DRV_MEMORY_INDEX_0                   0
+#define DRV_MEMORY_CLIENTS_NUMBER_IDX0       1
+#define DRV_MEMORY_DEVICE_START_ADDRESS      0x20000000U
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE         96UL
+#define DRV_MEMORY_DEVICE_MEDIA_SIZE_BYTES   (DRV_MEMORY_DEVICE_MEDIA_SIZE * 1024U)
+#define DRV_MEMORY_DEVICE_PROGRAM_SIZE       512U
+/* Memory Driver Instance 0 RTOS Configurations*/
+#define DRV_MEMORY_STACK_SIZE_IDX0               1024
+#define DRV_MEMORY_PRIORITY_IDX0                 1
+#define DRV_MEMORY_RTOS_DELAY_IDX0               10U
+
 
 
 // *****************************************************************************

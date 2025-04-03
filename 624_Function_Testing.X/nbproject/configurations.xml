@@ -7,6 +7,12 @@
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
           <logicalFolder name="driver" displayName="driver" projectFiles="true">
+            <logicalFolder name="memory" displayName="memory" projectFiles="true">
+              <itemPath>../src/config/default/driver/memory/src/drv_memory_local.h</itemPath>
+              <itemPath>../src/config/default/driver/memory/drv_memory.h</itemPath>
+              <itemPath>../src/config/default/driver/memory/drv_memory_definitions.h</itemPath>
+              <itemPath>../src/config/default/driver/memory/drv_memory_ram.h</itemPath>
+            </logicalFolder>
             <itemPath>../src/config/default/driver/driver.h</itemPath>
             <itemPath>../src/config/default/driver/driver_common.h</itemPath>
           </logicalFolder>
@@ -37,6 +43,12 @@
             <logicalFolder name="port" displayName="port" projectFiles="true">
               <itemPath>../src/config/default/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
+            <logicalFolder name="ram" displayName="ram" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/ram/plib_ram.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/rtc/plib_rtc.h</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="system" displayName="system" projectFiles="true">
             <logicalFolder name="cache" displayName="cache" projectFiles="true">
@@ -62,6 +74,11 @@
             </logicalFolder>
             <logicalFolder name="reset" displayName="reset" projectFiles="true">
               <itemPath>../src/config/default/system/reset/sys_reset.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/default/system/time/src/sys_time_local.h</itemPath>
+              <itemPath>../src/config/default/system/time/sys_time.h</itemPath>
+              <itemPath>../src/config/default/system/time/sys_time_definitions.h</itemPath>
             </logicalFolder>
             <itemPath>../src/config/default/system/system_module.h</itemPath>
             <itemPath>../src/config/default/system/system_media.h</itemPath>
@@ -272,6 +289,12 @@
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
+          <logicalFolder name="driver" displayName="driver" projectFiles="true">
+            <logicalFolder name="memory" displayName="memory" projectFiles="true">
+              <itemPath>../src/config/default/driver/memory/src/drv_memory_ram.c</itemPath>
+              <itemPath>../src/config/default/driver/memory/src/drv_memory.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
           <logicalFolder name="osal" displayName="osal" projectFiles="true">
             <itemPath>../src/config/default/osal/osal_freertos.c</itemPath>
           </logicalFolder>
@@ -297,6 +320,12 @@
             <logicalFolder name="port" displayName="port" projectFiles="true">
               <itemPath>../src/config/default/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
+            <logicalFolder name="ram" displayName="ram" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/ram/plib_ram.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="rtc" displayName="rtc" projectFiles="true">
+              <itemPath>../src/config/default/peripheral/rtc/plib_rtc_timer.c</itemPath>
+            </logicalFolder>
           </logicalFolder>
           <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
             <itemPath>../src/config/default/stdio/xc32_monitor.c</itemPath>
@@ -318,6 +347,9 @@
             </logicalFolder>
             <logicalFolder name="reset" displayName="reset" projectFiles="true">
               <itemPath>../src/config/default/system/reset/sys_reset.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="time" displayName="time" projectFiles="true">
+              <itemPath>../src/config/default/system/time/src/sys_time.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <itemPath>../src/config/default/initialization.c</itemPath>

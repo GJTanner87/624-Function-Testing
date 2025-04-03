@@ -125,11 +125,18 @@ build/default/debug/_ext/1171490990/initialization.o: \
  ../src/config/default/peripheral/nvic/plib_nvic.h \
  ../src/config/default/peripheral/cmcc/plib_cmcc.h \
  ../src/config/default/peripheral/pm/plib_pm.h \
- ../src/config/default/peripheral/eic/plib_eic.h \
- ../src/config/default/system/console/sys_console.h \
- ../src/config/default/driver/driver.h \
+ ../src/config/default/peripheral/ram/plib_ram.h \
+ ../src/config/default/driver/memory/drv_memory.h \
+ ../src/config/default/driver/memory/drv_memory_definitions.h \
  ../src/config/default/driver/driver_common.h \
- ../src/config/default/system/console/src/sys_console_local.h \
+ ../src/config/default/system/system_media.h \
+ ../src/config/default/system/int/sys_int.h \
+ ../src/config/default/system/int/sys_int_mapping.h \
+ ../src/config/default/driver/memory/src/drv_memory_local.h \
+ ../src/config/default/driver/memory/drv_memory.h \
+ ../src/config/default/osal/osal.h \
+ ../src/config/default/osal/osal_definitions.h \
+ ../src/config/default/osal/osal_freertos.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h \
  ../src/config/default/FreeRTOSConfig.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/projdefs.h \
@@ -138,19 +145,24 @@ build/default/debug/_ext/1171490990/initialization.o: \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
  ../src/third_party/rtos/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
  ../src/third_party/rtos/FreeRTOS/Source/include/list.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
+ ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
+ ../src/config/default/peripheral/eic/plib_eic.h \
+ ../src/config/default/peripheral/rtc/plib_rtc.h \
+ ../src/config/default/system/time/sys_time.h \
+ ../src/config/default/system/time/sys_time_definitions.h \
+ ../src/config/default/driver/memory/drv_memory_ram.h \
+ ../src/config/default/system/console/sys_console.h \
+ ../src/config/default/driver/driver.h \
+ ../src/config/default/system/console/src/sys_console_local.h \
  ../src/config/default/system/int/sys_int.h \
- ../src/config/default/system/int/sys_int_mapping.h \
  ../src/config/default/system/cache/sys_cache.h \
  ../src/config/default/system/reset/sys_reset.h \
  ../src/config/default/osal/osal.h \
- ../src/config/default/osal/osal_definitions.h \
- ../src/config/default/osal/osal_freertos.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/task.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/semphr.h \
- ../src/third_party/rtos/FreeRTOS/Source/include/queue.h \
  ../src/config/default/system/debug/sys_debug.h ../src/app.h
 
 ../src/config/default/configuration.h:
@@ -405,15 +417,29 @@ build/default/debug/_ext/1171490990/initialization.o: \
 
 ../src/config/default/peripheral/pm/plib_pm.h:
 
-../src/config/default/peripheral/eic/plib_eic.h:
+../src/config/default/peripheral/ram/plib_ram.h:
 
-../src/config/default/system/console/sys_console.h:
+../src/config/default/driver/memory/drv_memory.h:
 
-../src/config/default/driver/driver.h:
+../src/config/default/driver/memory/drv_memory_definitions.h:
 
 ../src/config/default/driver/driver_common.h:
 
-../src/config/default/system/console/src/sys_console_local.h:
+../src/config/default/system/system_media.h:
+
+../src/config/default/system/int/sys_int.h:
+
+../src/config/default/system/int/sys_int_mapping.h:
+
+../src/config/default/driver/memory/src/drv_memory_local.h:
+
+../src/config/default/driver/memory/drv_memory.h:
+
+../src/config/default/osal/osal.h:
+
+../src/config/default/osal/osal_definitions.h:
+
+../src/config/default/osal/osal_freertos.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/include/FreeRTOS.h:
 
@@ -431,31 +457,41 @@ build/default/debug/_ext/1171490990/initialization.o: \
 
 ../src/third_party/rtos/FreeRTOS/Source/include/mpu_wrappers.h:
 
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
+
 ../src/third_party/rtos/FreeRTOS/Source/include/task.h:
 
 ../src/third_party/rtos/FreeRTOS/Source/include/list.h:
 
-../src/config/default/system/int/sys_int.h:
+../src/third_party/rtos/FreeRTOS/Source/include/semphr.h:
 
-../src/config/default/system/int/sys_int_mapping.h:
+../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
+
+../src/third_party/rtos/FreeRTOS/Source/include/task.h:
+
+../src/config/default/peripheral/eic/plib_eic.h:
+
+../src/config/default/peripheral/rtc/plib_rtc.h:
+
+../src/config/default/system/time/sys_time.h:
+
+../src/config/default/system/time/sys_time_definitions.h:
+
+../src/config/default/driver/memory/drv_memory_ram.h:
+
+../src/config/default/system/console/sys_console.h:
+
+../src/config/default/driver/driver.h:
+
+../src/config/default/system/console/src/sys_console_local.h:
+
+../src/config/default/system/int/sys_int.h:
 
 ../src/config/default/system/cache/sys_cache.h:
 
 ../src/config/default/system/reset/sys_reset.h:
 
 ../src/config/default/osal/osal.h:
-
-../src/config/default/osal/osal_definitions.h:
-
-../src/config/default/osal/osal_freertos.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/task.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/semphr.h:
-
-../src/third_party/rtos/FreeRTOS/Source/include/queue.h:
 
 ../src/config/default/system/debug/sys_debug.h:
 
